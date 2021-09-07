@@ -1,0 +1,79 @@
+<app-home-header [imgPrefix]='imgPefix'> </app-home-header>
+
+
+<section class="my-5">
+    <div class="container">
+        <div class="row my-2">
+            <div class="col-md-4 d-flex justify-content-center align-items-center ">
+                <div class=" trendingMoviesCaption py-4 px-2">
+                    <h2 class="h1">Trending movies to watch right now </h2>
+                    <p class="text-muted"> most watched movies by days</p>
+                </div>
+
+            </div>
+            <div class="col-md-2 my-2" *ngFor="let movie of (trendingMovies)">
+                <div class="MovieItem m-1 position-relative">
+                    <a [routerLink]="['/movieDetails' ,'movie' , movie.id]"> <img class="w-100"
+                            [src]="imgPefix+movie.poster_path" [alt]="movie.title">
+                        <h3 class="h6 my-2 text-center">{{movie.title}}</h3>
+                        <div class="vote  bg-lightBlue">
+                            {{movie.vote_average}}
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="my-5">
+    <div class="container">
+        <div class="row my-2">
+            <div class="col-md-4 d-flex justify-content-center align-items-center ">
+                <div class=" trendingMoviesCaption py-4 px-2">
+                    <h2 class="h1">Trending Tv series to watch right now </h2>
+                    <p class="text-muted"> most watched tv series by days</p>
+                </div>
+
+            </div>
+            <div class="col-md-2 my-2" *ngFor="let movie of trendingTv">
+                <div class="MovieItem m-1 position-relative">
+                    <a [routerLink]="['/movieDetails' ,'tv' , movie.id]">
+                        <img class="w-100" [src]="imgPefix+movie.poster_path" [alt]="movie.title">
+                        <h3 class="h6 my-2 text-center">{{movie.name}}</h3>
+                        <div class="vote  bg-lightBlue">
+                            {{movie.vote_average}}
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="my-5">
+    <div class="container">
+        <div class="row my-2">
+            <div class="col-md-4 d-flex justify-content-center align-items-center ">
+                <div class=" trendingMoviesCaption py-4 px-2">
+                    <h2 class="h1">Trending Actors to watch right now </h2>
+                    <p class="text-muted"> most watched Actors by days</p>
+                </div>
+
+            </div>
+            <div class="col-md-2 my-2" *ngFor="let person of trendingPersons">
+                <div class="MovieItem m-1 position-relative">
+                    <img class="w-100" [src]="imgPefix+person.profile_path" [alt]="person.name">
+                    <h3 class="h6 my-2 text-center">{{person.name}}</h3>
+                    <!-- <div class="vote  bg-lightBlue">
+                        {{person.popularity}}
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

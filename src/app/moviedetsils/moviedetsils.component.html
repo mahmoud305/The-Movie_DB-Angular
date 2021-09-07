@@ -1,0 +1,39 @@
+<section>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-4  ms-auto ">
+                <div class="movieImg position-relative">
+                    <img [src]="imgPefix+movieDetails.poster_path" class="w-100" [alt]="movieDetails.title">
+                    <div class="movieRunTime bg-info">
+                        <span *ngIf="mediaType=='movie' " ><i class="far fa-clock px-1"></i>{{convertTime(movieDetails.runtime)}} </span>
+                        <span  *ngIf="mediaType=='tv' " >  {{movieDetails.number_of_episodes}}<span class="fw-bolder px-1" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">EP</span> </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 me-auto">
+                <div class="movieInfo p-3">
+                    <h2 *ngIf="mediaType=='movie'" class="h1 fw-bolder">{{movieDetails.title}}</h2>
+                    <h2 *ngIf="mediaType=='tv'" class="h1 fw-bolder">{{movieDetails.name}}</h2>
+
+                    <h3 *ngIf="mediaType=='movie'" class="h2 grayFont">{{movieDetails.tagline}} </h3>
+                    <h2 *ngIf="mediaType=='tv'" class="h2 grayFont">{{movieDetails.original_name}}</h2>
+                    <p class="d-flex justify-content-around"> <span *ngFor="let genre of movieDetails.genres"
+                            class="px-3 py-2 rounded-2 bg-lightBlue fw-bold">{{genre.name}}</span> </p>
+                    <div class="my-2 ">
+                        <p class="py-2">Vote : {{movieDetails.vote_average}}</p>
+                        <p class="py-2">Vote count : {{movieDetails.vote_count}}</p>
+                        <p class="py-2"> popularity : {{movieDetails.popularity}}</p>
+                        <p class="py-2">Release date : {{movieDetails.release_date}}</p>
+                    </div>
+
+
+
+                    <!-- . <span> {{ movieDetails.runtime/60}}h <span *ngIf="movieDetails.runtime>60">{{movieDetails.runtime-60}}m </span></span> -->
+
+                    <p class=" fa-text-height-2"><span class="grayFont"> overview:</span> <br>
+                        {{movieDetails.overview}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,40 @@
+
+<section class="my-5">
+    <div class="container">
+        <div class="row my-2">
+            <div class="col-md-4 m-auto d-flex justify-content-center align-items-center ">
+                <div class=" trendingMoviesCaption py-4 px-2">
+                    <h2 class="h1 text-center" >Discover series to watch right now </h2>
+                    <!-- <p class="text-muted"> most watched movies by days</p> -->
+                </div>
+
+            </div>
+</div>
+<div class="row my-2">
+            <div class="col-md-3 my-2" *ngFor="let tv of (allMedia)">
+                <div class="MovieItem m-1 position-relative bg-dark">
+                    <a [routerLink]="['/movieDetails' ,'tv', tv.id]"  >   <img class="w-100" [src]="imgPefix+tv.poster_path" [alt]="tv.name">
+                    <h3 class="h5 fw-bold my-2 text-center p-2">{{tv.name}}</h3>
+                    <div class="vote  bg-lightBlue">
+                        {{tv.vote_average}}
+                    </div> </a>
+                  
+                </div>
+
+            </div>
+</div>
+        <!-- end of main row  -->
+
+      <div class="my-5">
+        <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+            <ul class="pagination">
+              
+              <li class="page-item pointer" *ngFor="let i of mediaPages" >
+                  <a class="page-link bg-warning fw-bolder" (click)="getTvPage(i)" >
+                      {{i}}</a></li>
+            
+            </ul>
+          </nav>
+      </div>
+    </div>
+</section>

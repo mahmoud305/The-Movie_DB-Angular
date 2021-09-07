@@ -1,0 +1,24 @@
+
+<head> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+  </head>
+
+<section class="vh-100 homeHeader d-flex align-items-end justify-content-center">
+
+<div class="container">  
+    <h1 class="h1HomeHeader"> our latest movies</h1>
+  <owl-carousel-o [options]="customOptions">
+
+    <ng-container *ngFor="let movie of trendingMovies">
+      <ng-template carouselSlide [id]="movie.id">
+        <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.title">
+        <h3 class="h6 my-2 text-center fw-bolder">{{movie.title}}</h3>
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>
+ </div>
+  
+ 
+</section>

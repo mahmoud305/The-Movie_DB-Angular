@@ -1,0 +1,48 @@
+.homeHeader{
+    background-image: url("../../assets/bg-movie.webp");
+    background-position: center center;
+    background-size: cover;
+    
+}
+
+.h1HomeHeader{
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.5rem;
+
+}
+
+/**********mediaQuery *****************************************************/
+@media screen and (max-width:576px) {
+    .h1HomeHeader{
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.5rem;
+    
+    }
+}
+
+@media screen and (max-width:768px) and (min-width:577px)  {
+    .h1HomeHeader{
+        font-family: 'Roboto', sans-serif;
+        font-size: 2rem;
+    
+    }
+}
+
+
+@media screen and (max-width:992px) and (min-width:769px)  {
+    .h1HomeHeader{
+        font-family: 'Roboto', sans-serif;
+        font-size: 3rem;
+    
+    }
+}
+
+
+@media screen and (max-width:1200px)and (min-width:993px)  {
+    
+}
+
+
+@media screen and (max-width:1400px)and (min-width:1201px)  {
+    
+}
